@@ -5,21 +5,21 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-model Video{
-  id              String @id @default(cuid())
-  title           String
-  description     String?
-  publicId        String
-  originalSize    String
-  compressedSize  String
-  duration        String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+model Video {
+    id             String   @id @default(cuid())
+    title          String
+    description    String?
+    publicId       String
+    originalSize   String
+    compressedSize String
+    duration       Float
+    createdAt      DateTime @default(now())
+    updatedAt      DateTime @updatedAt
 }
