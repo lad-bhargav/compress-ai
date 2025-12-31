@@ -6,6 +6,11 @@ import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
 
+// Add these exports at the top of your file
+export const maxDuration = 300; // 5 minutes for video upload
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
