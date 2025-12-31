@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.5",
+    "@neondatabase/serverless": "^1.0.2",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "7.2.0",
+    "@vercel/postgres": "^0.10.0",
     "axios": "^1.13.2",
     "cloudinary": "^2.8.0",
     "dayjs": "^1.11.19",
@@ -33,6 +36,7 @@
     "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "postcss-preset-env": "^10.6.0",
     "prisma": "7.2.0",
     "tailwindcss": "^4.1.18",
     "tsx": "^4.21.0",
