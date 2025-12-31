@@ -78,7 +78,13 @@ function VideoUpload() {
               <input
                 type="file"
                 accept="video/*"
-                onChange={(e) => setFile(e.target.files?.[0] || null)}
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) {
+                    console.log('File:', f.name, (f.size/1024/1024).toFixed(2) + 'MB');
+                    setFile(f);
+                  }
+                }}
                 className="file-input file-input-bordered w-full"
                 required
               />
